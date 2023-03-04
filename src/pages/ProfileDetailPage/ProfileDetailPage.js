@@ -190,14 +190,17 @@ const Location = styled.div`
 display:flex;
 justify-content:flex-end;
 align-items:center;
-
+padding-right: 50px;
 p{
     color: #dadada;
     font-weight: 500;
     margin-right:10px;
+    font-size: 13px;
 
     span{
-        color:#5c5c5c
+        color:#5c5c5c;
+        font-weight: 500;
+        font-size: 13px;
     }
 }
 `;

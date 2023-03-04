@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter , Routes,Route} from 'react-router-dom'
 import './App.css';
+import GalleryScreen from './pages/GalleryScreen/GalleryScreen';
+import LandingPage from './pages/LandingPage/LandingPage';
+import PostDetailsPage from './pages/PostsDetailsPage/PostDetailsPage';
+import ProfileDetailPage from './pages/ProfileDetailPage/ProfileDetailPage';
+import ToDoScreen from './pages/ToDoScreen/ToDoScreen';
+import ProtectedRoutes from './routes/ProtectedRoutes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+      <Route path='/' element={<LandingPage />}  />
+      <Route element={<ProtectedRoutes />}>
+      <Route path='/profileDetail' element={<ProfileDetailPage />}  />
+      <Route path='/postDetails' element={<PostDetailsPage />}  />
+      <Route path='/gallery' element={<GalleryScreen />}  />
+      <Route path='/todo' element={<ToDoScreen />}  />
+      </Route>
+      
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
